@@ -1,15 +1,22 @@
 import 'package:flutter/material.dart';
 
-void main() {
+/// All environments must be call this method for start application
+Future<void> mainCommon({
+  required final String env,
+  required final bool debug,
+  required final Function injectionDependencies,
+}) async {
   runApp(const MyApp());
 }
 
+// ignore: public_member_api_docs
 class MyApp extends StatelessWidget {
-  const MyApp({Key? key}) : super(key: key);
+  // ignore: public_member_api_docs
+  const MyApp({final Key? key}) : super(key: key);
 
   // This widget is the root of your application.
   @override
-  Widget build(BuildContext context) {
+  Widget build(final BuildContext context) {
     return MaterialApp(
       title: 'Flutter Demo',
       theme: ThemeData(
@@ -29,8 +36,13 @@ class MyApp extends StatelessWidget {
   }
 }
 
+// ignore: public_member_api_docs
 class MyHomePage extends StatefulWidget {
-  const MyHomePage({Key? key, required this.title}) : super(key: key);
+  // ignore: public_member_api_docs
+  const MyHomePage({
+    required this.title,
+    final Key? key,
+  }) : super(key: key);
 
   // This widget is the home page of your application. It is stateful, meaning
   // that it has a State object (defined below) that contains fields that affect
@@ -41,6 +53,7 @@ class MyHomePage extends StatefulWidget {
   // used by the build method of the State. Fields in a Widget subclass are
   // always marked "final".
 
+  // ignore: public_member_api_docs
   final String title;
 
   @override
@@ -62,7 +75,7 @@ class _MyHomePageState extends State<MyHomePage> {
   }
 
   @override
-  Widget build(BuildContext context) {
+  Widget build(final BuildContext context) {
     // This method is rerun every time setState is called, for instance as done
     // by the _incrementCounter method above.
     //
