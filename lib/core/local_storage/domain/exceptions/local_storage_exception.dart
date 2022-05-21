@@ -10,7 +10,7 @@ class LocalStorageException implements Exception {
   }
 
   final String message;
-  final Object error;
+  final Object? error;
 
   @override
   String toString() => message;
